@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    tools:context="com.example.gui_shopping_list.HomeActivity" >
+
+  
+    <Button 
+        android:id="@+id/emailB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:textStyle="bold"
+        android:textColor="#FFA500"
+        android:text="@string/emailB"/>
+    
+        <!--Reference: http://www.tutorialspoint.com/android/android_user_interface_layouts.htm -->
+        
+    <TextView 
+        android:id="@+id/budgetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="#008080"
+        android:padding="5dp"
+        android:textSize="32sp"
+        android:layout_toRightOf="@id/emailB"/>
+    
+    <View
+        android:id="@+id/seperator"
+		android:layout_width="fill_parent"
+		android:layout_height="1dp"       
+		android:background="#FFA500"
+		android:layout_marginTop="8dp"
+		android:layout_marginBottom="8dp"
+		android:layout_below="@+id/emailB" />
+    
+    <TextView 
+        android:id="@+id/budget2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="#008080"
+        android:padding="5dp"
+        android:textSize="32sp"
+        android:layout_below="@id/seperator"/>
+       
+    <TextView 
+        android:id="@+id/headText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="#008080"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:layout_below="@id/budget2Text"/>
+    
+    
+	<LinearLayout 
+	    
+    	android:orientation="vertical" 
+   	 	android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headText"> 
+
+     	    
+	<TextView     
+     	android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="#008080"
+        android:padding="5dp"
+        android:textSize="16sp"/>
+     
+	<TextView     
+     	android:id="@+id/txtDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="#008080"
+        android:padding="5dp"
+        android:textSize="16sp"/>
+     
+	<TextView     
+     	android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-2dp"
+        android:textStyle="bold"
+        android:textColor="#008080"
+        android:padding="5dp"
+        android:textSize="16sp"/>
+	
+	</LinearLayout>
+    
+    
+</RelativeLayout>

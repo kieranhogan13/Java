@@ -1,0 +1,81 @@
+CSP CLASS TEST PREP - 2/12/14
+-----------------------------
+- Layers of protocol
+- OSI - App, Pres, Sess, Trans, Netw, Data, Phys
+- TCP/IP - App, Trans, Int, Netw, Phys, 54321
+- Less layers, services vs interfacs / protocls
+- Addressing, Error control, Sequencing, Flow Control
+------------
+CSP Concepts
+------------
+- Client - local, initiates contact with server, no specialised hardware
+- Server - shared computer, remote clients, waits for and accepts comms, powerful hardwa
+- Server starts, client contacts server, messages exchanged
+- concurrency, multiple clients served
+- thread for each client, on exec main thread runs, on request new service thread created, request handled then thread terminated, main thread continues 
+------------
+TCP & Berkley Sockets API
+------------
+- Connection orientation, p2p coms, complete reliability, full duplex coms, stream interface, reliable connection startup, graceful conn shut down
+- Hardware/Software in transport layer = entity
+- Can be in OS Kernel, seperate process, in library package, or on network interface card
+- If protocol stack is within os = system calls
+- LISTEN blocks server till client req arrives
+- CONNECT executed by client, sends packet to server, attempts to connect
+- SEND sends information
+- RECIEVE block until data packet arrives
+- DISCONNECT releases connection
+- Berkley sockets, UNIX OS, standard for interfacing to TCP/IP
+- Socket Transport Primitives - SOCKET(create connection end point), BIND(attach local address to socket), LISTEN(allow willingness to accept connections), ACCPET(block caller until connection attempt arrives), CONNECT(actively attempt to establish connection), WRITE/SEND(send data), READ/RECIEVE(recieve data), CLOSE(release connection)
+- Most systems part of OS, some require socket library to provide interface for transport entity, socket libarys different to API however
+-------------
+Addressing
+-------------
+- TSAPs(Transport Service Access Points)
+- NSAPs(Network Service Access Points)
+- reserved ports, free - 5001-65535
+-------------
+App-to-TCP Address Exchange
+-------------
+- Socket address structures local, passed by reference, generic socket address structure is used
+- int BIND(listenfd,(SA *) &servaddr, sizeof(servaddr));
+- Byte-order - little-endian, big endian (low at start, high at start)
+- TCP uses 16bit port num, 32bit IPv4 addresses
+- TCP/IP uses big-endian, network byte order
+- Byte ordering - htons(), htonl(), ntohs(), ntohl()
+- Byte manipulation - inet_pton, inet_ntop
+-------------
+Intro to HTTP
+-------------
+- Broswer becomes client of server when retrievn
+- set of clients, interpreters, controller (for user input, display etc)
+- Also has HTTP client and HTML interpreter
+- Browser can containt FTP client for files, email client, etc
+- HyperTextTransferProtocol used to deliver all files (mostly) on the web, encoded in ASCII
+- HTTP transactions use client server model
+- Connection opened by client, request message sent from client to server, server returns response message with requested resource, then server closes connection
+- GET/path/to/file/index.htmlHTTP/1.0
+- HTTP/1.0200 OK, or HTTP/1.0404 Not Found
+- Header Lines, From, User-Agent(prog)
+- HEAD asks server to return response to headers
+- POST sends data to the server to be processed
+- Caching - items stored in cache so as to read more quickly than over network connection, can consume alot of diskspace if unneccessary, most browsers can allow adjusting of caching
+- HTTP can specify cache timeout
+- ALT TPs, HTTP1.1(persistent connect), HTTPS (secure connect)
+- Caching policies, heuristics uses last-modified header to predict, If-Modified-Since request header can also be used
+- Cache-Control, max time(seconds) to cache the document
+- Las-Modified, docs last modified date
+- Etag, unique hash for the document
+--------------
+Domain Name Resolution (DNS)
+--------------
+- DNS is used to map between hostnames and IP addresses, hostname can be aisling, or aisling.student.dit.ie
+- DNS entries are call resource records RRs
+- A records map hostname to 32bitIPv4
+- AAAA records map hostname to 128bit IPv6
+- PTR records map IP adds into hostnames
+- MX records specifies host to act as mail exchanger
+- CNAME records map common services such as ftp and www to the actual host providing the service
+- Organizations run 1 or more server and apps contact a DNS server by calling function 'resolver'
+- Calls made using gethostbyname and gethostbyaddr, code refers to config file to determine location of name server
+- 
