@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Simple Instagram App</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Loading &#8230;</string>
+    <string name="welcome_text">Welcome %1$s %2$s, You are a %3$s</string>
+    <string name="login_with_instagram">Login with Instagram</string>
+</resources>
